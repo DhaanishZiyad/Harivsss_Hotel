@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="index.html"><img src="images/hotel logo.png" alt="logo" id="hotel-logo"></a>
+            <div id="navigations">
+                <a href="index.html">HOME</a>
+                <a href="our branches.html">OUR BRANCHES</a>
+                <a href="restaurants.html">RESTAURANTS</a>
+                <a href="adventures.html">ADVENTURES</a>
+            </div>
+            <button id="book-now">BOOK NOW</button>
+        </div>
+    </header>
+    <div class="page-banner">
+        <img src="images/booking.jpg" alt="">
+        <h1>Booking</h1>
+    </div>
+    <div class="container">
+        <h2>Hotel Booking</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="check-in">Check-in Date:</label>
+                <input type="date" id="check-in" name="check-in" required>
+            </div>
+            <div class="form-group">
+                <label for="check-out">Check-out Date:</label>
+                <input type="date" id="check-out" name="check-out" required>
+            </div>
+            <div class="form-group">
+                <label for="room-type">Room Type:</label>
+                <select id="room-type" name="room-type" required>
+                    <option value="single">Single</option>
+                    <option value="double">Double</option>
+                    <option value="suite">Suite</option>
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="room-type">Adventure Type:</label>
+              <select id="room-type" name="room-type" required>
+                  <option value="single">Swimming Pool</option>
+                  <option value="double">Tennis Court</option>
+                  <option value="suite">Fitness Gym</option>
+              </select>
+          </div>
+            <div class="form-group">
+                <label for="special-requests">Special Requests:</label>
+                <textarea id="special-requests" name="special-requests" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
