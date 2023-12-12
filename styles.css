@@ -96,11 +96,6 @@ body {
 
 
 
-
-
-
-
-
 /* home image */
 
 
@@ -330,7 +325,7 @@ body {
     display: flex;
     width: 100%;
     overflow: hidden;
-    height: 300px;
+    height: 500px;
     align-items: center;
     justify-content: center;
 }
@@ -513,55 +508,12 @@ body {
     }
 }
 
-/* booking page */
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 
-h2 {
-    text-align: center;
-}
 
-.form-group {
-    margin-bottom: 20px;
-}
 
-label {
-    font-weight: bold;
-}
 
-input[type="text"],
-input[type="email"],
-input[type="date"],
-select,
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
 
-button[type="submit"] {
-    background-color: #ffffff;
-    color: #000000;
-    padding: 10px 20px;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 5px;
-    font-size: 17px;
-    cursor: pointer;
-
-}
-
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
 
 
 
