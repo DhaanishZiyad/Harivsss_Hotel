@@ -328,6 +328,7 @@ body {
     height: 500px;
     align-items: center;
     justify-content: center;
+    background: #000;
 }
 
 .page-banner img{
