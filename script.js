@@ -1,13 +1,15 @@
 document.addEventListener('alpine:init', () => {
     Alpine.data('app', () => ({
 
-        coupons: 'Promo123',
+        coupons: ['Promo123'],
 
         past_bookings: [],
 
         favorites: [],
 
         loyalty_points: 0,
+
+        
 
         tab: 1,
 
@@ -54,6 +56,23 @@ document.addEventListener('alpine:init', () => {
             final_adventure_cost: 0
         },
 
+        get numberOfDays() {
+            // Check if both check-in and check-out dates are selected
+            if (this.booking.checkin && this.booking.checkout) {
+                const checkinDate = new Date(this.booking.checkin);
+                const checkoutDate = new Date(this.booking.checkout);
+
+                // Calculate the difference in days
+                const timeDifference = checkoutDate.getTime() - checkinDate.getTime();
+                const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+                return daysDifference;
+            }
+
+            // If either check-in or check-out date is not selected, return 0
+            return 0;
+        },
+
         get total_adventure_cost() {
             let total = 0;
             total += this.booking.adventure.number_of_adults_local * 1000;
@@ -69,7 +88,7 @@ document.addEventListener('alpine:init', () => {
         get total_cost() {
             let total = 0;
             extra = this.booking.extra_bed * 8000;
-            total += (this.booking.room_cost * this.booking.number_of_rooms) + extra;
+            total += (this.booking.room_cost * this.booking.number_of_rooms * this.numberOfDays) + extra;
             total += this.total_adventure_cost;
             this.booking.total_cost = total;
 
@@ -220,6 +239,40 @@ document.addEventListener('alpine:init', () => {
 
             // clear the booking from localstorage
             localStorage.removeItem('booking');
+        },
+
+
+        // Add this method to your Alpine.js component
+        clearLocalStorage() {
+            // Clear all items from local storage
+            localStorage.clear();
+
+            // Reset relevant data properties to their default values
+            this.booking = {
+                checkin: null,
+                checkout: null,
+                room_cost: 0,
+                number_of_rooms: 0,
+                number_of_adults: 0,
+                number_of_children: 0,
+                extra_bed: 0,
+                promo_code: null,
+                // ... (other properties)
+
+                // final calculations
+                total_cost: 0,
+                discount_percentage: 0,
+                total_discount: 0,
+                final_total: 0,
+                final_adventure_cost: 0
+            };
+
+            this.past_bookings = [];
+            this.favorites = [];
+            this.loyalty_points = 0;
+
+            // Reset the tab to the default value (you may adjust this based on your application)
+            this.tab = 1;
         },
 
 
